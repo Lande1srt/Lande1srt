@@ -1,368 +1,1433 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="zh-rCN" 
+	  translate="no">
+
 	<head>
-		<meta charset="UTF-8">
 
-		<title>Lande Core</title>
+		<meta http-equiv="Content-Type"
+			  content="text/html; charset=utf-8" />
 
-<link rel="stylesheet" href="fonts/fonts.css">
-		<style>
-			body{zoom:1.2}
-			      @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
-			* {
-			  margin: 0px;
-			  padding: 0;
-			}
-			
-			body {
-			  font-family: 'Poppins';
-			  overflow: hidden;
-			}
-			
-			.container {
-			  width: 100%;
-			  height: 100vh;
-			  background-color: #35fff9;
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			}
-			.container .post {
-			  width: 380px;
-			  height: 780px;
-			  display: flex;
-			  flex-direction: column;
-			  position: relative;
-			}
-			.container .post:hover .header_post {
-			  margin-top: -20px;
-			}
-			.container .post:hover .body_post {
-			  height: 50%;
-			}
-			.container .post .header_post {
-			  width: 100%;
-			  height: 40%;
-			  background: #35fff9;
-			  position: absolute;
-			  top: 0;
-			  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			}
-			.container .post .header_post img {
-			  max-width: 100%;
-			  height: auto;
-			}
-			.container .post .body_post {
-			  width: 100%;
-			  height: 60%;
-			  background: #fff;
-			  position: absolute;
-			  bottom: 0;
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  cursor: pointer;
-			}
-			.container .post .body_post .post_content {
-			  width: 80%;
-			  height: 80%;
-			  background: #fff;
-			  position: relative;
-			}
-			.container .post .body_post .post_content h1 {
-			  font-size: 20px;
-			  font-weight: bold;
-			}
-			.container .post .body_post .post_content p {
-			  font-size: 14px;
-			  font-weight: normal;
-			}
-			.container .post .body_post .post_content .container_infos {
-			  width: 100%;
-			  display: flex;
-			  justify-content: space-between;
-			  position: absolute;
-			  bottom: 0;
-			  border-top: 1px solid rgba(0, 0, 204, 0.2);
-			  padding-top: 25px;
-			}
-			.container .post .body_post .post_content .container_infos .postedBy {
-			  display: flex;
-			  flex-direction: column;
-			  text-transform: uppercase;
-			  letter-spacing: 1px;
-			  font-size: 12px;
-			}
-			.container .post .body_post .post_content .container_infos .postedBy span {
-			  font-size: 12px;
-			  text-transform: uppercase;
-			  opacity: 0.5;
-			  letter-spacing: 1px;
-			  font-weight: bold;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags {
-			  display: flex;
-			  flex-direction: column;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags span {
-			  font-size: 12px;
-			  text-transform: uppercase;
-			  opacity: 0.5;
-			  letter-spacing: 1px;
-			  font-weight: bold;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags .tags ul {
-			  display: flex;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags .tags ul li {
-			  font-size: 12px;
-			  letter-spacing: 2px;
-			  list-style: none;
-			  margin-left: 8px;
-			  text-transform: uppercase;
-			  position: relative;
-			  z-index: 1;
-			  display: flex;
-			  justify-content: center;
-			  cursor: pointer;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags .tags ul li:first-child {
-			  margin-left: 0px;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags .tags ul li:before {
-			  content: '';
-			  text-align: center;
-			  width: 100%;
-			  height: 5px;
-			  background: #fc22df;
-			  opacity: 0.5;
-			  position: absolute;
-			  bottom: 0;
-			  z-index: -1;
-			  padding: 0px 1px;
-			  -webkit-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -moz-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
-			}
-			.container .post .body_post .post_content .container_infos .container_tags .tags ul li:hover:before {
-			  height: 18px;
-			}
-			
-			footer {
-			  width: 350px;
-			  height: 80px;
-			  background: #17A16F;
-			  position: absolute;
-			  right: 0;
-			  bottom: -80px;
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			  animation: top 0.8s forwards;
-			}
-			footer span {
-			  display: flex;
-			  align-items: center;
-			  justify-content: center;
-			  font-size: 12px;
-			  color: #fff;
-			  font-family: 'Poppins';
-			}
-			footer span i {
-			  margin-right: 25px;
-			  font-size: 22px;
-			  color: #fff;
-			  animation: icon 2s forwards;
-			  opacity: 0;
-			}
-			
-			@keyframes top {
-			  0% {
-			    opacity: 0;
-			    bottom: -80px;
-			  }
-			  100% {
-			    opacity: 1;
-			    bottom: 0px;
-			  }
-			}
-			@keyframes icon {
-			  0% {
-			    opacity: 0;
-			    transform: scale(0);
-			  }
-			  50% {
-			    opacity: 1;
-			    transform: scale(1.3) rotate(-2deg);
-			  }
-			  100% {
-			    opacity: 1;
-			    bottom: 0px;
-			  }
-			}
-			
-			.button {
-			  -webkit-appearance: none;
-			     -moz-appearance: none;
-			          appearance: none;
-			  background: transparent;
-			  border: 0;
-			  color: #fff;
-			  cursor: pointer;
-			  font: inherit;
-			  font-weight: 100;
-			  line-height: 0;
-			  padding: 1em 1.5em;
-			  position: relative;
-			  transition: filter var(--button-motion-duration) var(--button-motion-ease);
-			  -webkit-user-select: none;
-			     -moz-user-select: none;
-			      -ms-user-select: none;
-			          user-select: none;
-			}
-			
-			.button:hover {
-			  filter: brightness(1);
-			}
-			
-			.button:active {
-			  filter: brightness(0.9);
-			}
-			
-			.button__content {
-			  display: block;
-			  position: relative;
-			  transition: transform var(--button-motion-duration) var(--button-motion-ease);
-			}
-			
-			.button:hover .button__content {
-			  transform: scale(var(--button-scale-up));
-			}
-			
-			.button:active .button__content {
-			  transform: scale(var(--button-scale-down));
-			}
-			
-			.button__shape {
-			  fill: #2134de;
-			  position: absolute;
-			  inset: 0;
-			  inline-size: 100%;
-			  block-size: 100%;
-			  overflow: visible;
-			  transition: transform var(--button-motion-duration) var(--button-motion-ease);
-			}
-			
-			@supports not (d: path('')) {
-			  .button:hover .button__shape {
-			    transform: scale(var(--button-scale-up));
-			  }
-			
-			  .button:active .button__shape {
-			    transform: scale(var(--button-scale-down));
-			  }
-			}
-			
-			.button__path {
-			  transition: d var(--button-motion-duration) var(--button-motion-ease);
-			}
-			
-			.button:hover .button__path {
-			  d: path("M0,0 C0,-5 100,-5 100,0 C105,0 105,100 100,100 C100,105 0,105 0,100 C-5,100 -5,0 0,0 z");
-			}
-			
-			.button:active .button__path {
-			  d: path("M0,0 C30,10 70,10 100,0 C95,30 95,70 100,100 C70,90 30,90 0,100 C5,70 5,30 0,0 z");
-			} 
+		<meta name="description"
+			  content="Name of your web site">
+		<meta name="author"
+			  content="Marketify">
 
-		</style>
+		<meta name="viewport"
+			  content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<title>Lande Space</title>
+		<link rel="icon" href="img/logo/icon.png" sizes="16x16">
+
+		<!-- 样式 -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&display=swap"
+			  rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+			  rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+			  rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+			  rel="stylesheet">
+
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="css/plugins.css" />
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="css/dark.css" />
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="css/style.css" />
 
 	</head>
-	<body translate="no">
-		<div class="container">
-			<div class="post">
-				<div class="header_post">
-					<img src="http://ys-g.ysepan.com/617122834/218389907/n74386L466JLKLlwfooUf8/space.jpg" alt="Sky">
-					
-					<input type="text" value="3094839098" id="copy" style="opacity: 0" readonly>
-					    <br>
-					<div align="center">
-						<button class="button" data-copytarget="#copy" style="font-family:Zhankulogo;font-size:30px;">Copy My QQ</button>
-					</div>
-					
-				<script>
-					    (function name(params) {
-					        'use strict';
-					
-					        document.body.addEventListener('click', copy, true);
-					
-					        function copy(e) {
-					            var
-					                t = e.target,
-					                c = t.dataset.copytarget,
-					                inp = (c ? document.querySelector(c) : null);
-					            if (inp && inp.select) {
-					                inp.select();
-					
-					                try {
-					                    document.execCommand('copy');
-					                } catch (error) {
-					                    alert('请使用Ctrl+c进行复制');
-					                }
-					            }
-					        }
-					    })();
-				</script>
-					
-				</div>
-				<div class="body_post">
-					<div class="post_content">
-						<h1 style="font-family:ChillR;">Lande Space</h1>
-						<p style="font-family:Vonbit;font-size:16px;">于231218开始开放...
-						<p style="font-family:Vonbit;font-size:16px;color:red;">
-							<br>核心主页正在建设中...请等待...
-						</p>
 
-						<p style="font-family:Vonbit;font-size:16px;color:blue;">
-							<br>“Nice To Meet You.”	
-						</p>
-						
-<p style="font-family:Vonbit;font-size:16px;color:skyblue;">
-							<br>唯一主站：<a href="https://landesr.icu/">Landesr.icu</a>
-							
-							</p>
-						
-							<div class="container_infos">
-							<div class="postedBy">
-								<span>Link</span>
-								landesr.icu
-							</div>
-							
-							<div class="container_tags">
-								<span>By</span>
-								<div class="tags">
-									<ul>
-										<li>Lande</li>
-									</ul>
+	<body>
+
+		<!-- 加载部分 -->
+		<div id="preloader">
+			<div class="loader_line"></div>
+		</div>
+
+		<!-- 结构目录 -->
+
+		<div class="orido_tm_all_wrap"
+			 data-magic-cursor="show">
+
+			<!-- 侧边 -->
+			<div class="orido_tm_mobile_menu">
+				<div class="mobile_menu_inner">
+					<div class="mobile_in">
+						<div class="logo">
+							<a href="#">
+								<img src="img/logo/logo.png"
+									 alt="logo" />
+							</a>
+						</div>
+						<div class="trigger">
+							<div class="hamburger hamburger--slider">
+								<div class="hamburger-box">
+									<div class="hamburger-inner"></div>
 								</div>
 							</div>
-							
+						</div>
+					</div>
+				</div>
+				<div class="dropdown">
+					<div class="dropdown_inner">
+						<ul class="anchor_nav">
+							<li class="current">
+								<a href="#home">SR · 幻蓝</a>
+							</li>
+							<li>
+								<a href="#about">SR · 幻径</a>
+							</li>
+							<li>
+								<a href="#service">SR · 幻语</a>
+							</li>
+							<li>
+								<a href="#portfolio">SR · 幻希</a>
+							</li>
+							<li>
+								<a href="#blog">SR · 幻泛</a>
+							</li>
+							<li>
+								<a href="#contact">SR · 幻溯</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- 顶部 -->
+			<div class="orido_tm_header">
+				<div class="header_in">
+					<div class="logo">
+						<a href="#">
+							<img src="img/logo/logo.png"
+								 alt="" />
+						</a>
+					</div>
+					<div class="menu">
+						<ul class="anchor_nav">
+							<li class="current">
+								<a href="#home">蓝 · 幻蓝</a>
+							</li>
+							<li>
+								<a href="#about">蓝 · 幻径</a>
+							</li>
+							<li>
+								<a href="#service">蓝 · 幻语</a>
+							</li>
+							<li>
+								<a href="#portfolio">蓝 · 幻希</a>
+							</li>
+							<li>
+								<a href="#blog">蓝 · 幻泛</a>
+							</li>
+							<li>
+								<a href="#contact">蓝 · 幻溯</a>
+							</li>
+						</ul>
+						<span class="ccc"></span>
+					</div>
+					<div class="button">
+						<a href="corep/serc.html"
+						   target="_blank">Space Wallpaper</a>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- Home -->
+			<div class="orido_tm_hero"
+				 id="home">
+				<div class="container">
+					<div class="content">
+						<div class="details">
+							<div class="short">
+								<h3>Lande Space
+									<img class="svg"
+										 src="img/svg/hi.svg"
+										 alt="L" />
+								</h3>
+								<span class="job">By Vnkus Lande</span>
+							</div>
+							<div class="text">
+								<p>Hey, I'm Vnkus Lande, 神秘的IT探索者。</p>
+							</div>
+							<div class="buttons">
+								<div class="orido_tm_boxed_button">
+									<a class="anchor"
+									   href="#contact">初遇
+										<img class="svg"
+											 src="img/svg/send.svg"
+											 alt="" />
+									</a>
+								</div>
+								<div class="orido_tm_simple_button">
+									<a class="line_effect anchor"
+									   href="#portfolio">幕许
+										<img class="svg"
+											 src="img/svg/top-arrow.svg"
+											 alt="" />
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="orido_tm_follow">
+						<span>弦作：</span>
+						<ul>
+							<li>
+								<a href="https://y.qq.com/n/ryqq/singer/0048UB1y19Cv7l">
+									<img class="svg"
+										 src="img/svg/social/qqmusic.svg"
+										 alt="" />
+								</a>
+							</li>
+							<li>
+								<a href="http://lande.ysepan.com/">
+									<img class="svg"
+										 src="img/svg/social/dribbble.svg"
+										 alt="" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="orido_tm_down">
+					<a class="anchor"
+					   href="#about">
+						<img class="svg"
+							 src="img/svg/down_button.svg"
+							 alt="" />
+					</a>
+				</div>
+				<div class="avatar">
+					<div class="img">
+						<img src="img/hero/1.jpg"
+							 alt="BGW" />
+						<div class="video_button">
+							<a onclick="alert('暂无内容');return false;">
+								<img class="anim_circle"
+									 src="img/hero/welcome.png"
+									 alt="" />
+								<img class="svg"
+									 src="img/svg/play.svg"
+									 alt="" />
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<!-- 次页 -->
+			<div class="orido_tm_section"
+				 id="about">
+				<div class="orido_tm_about">
+					<div class="about_in">
+						<div class="left">
+							<div class="box">
+								<h3 class="year">SR.</h3>
+								<span class="experience"></span>
+								<h3 class="name">`-Vnkus-Lande-</h3>
+							</div>
+						</div>
+						<div class="right">
+							<span class="element">
+								<img class="svg"
+									 src="img/svg/element.svg"
+									 alt="" />
+							</span>
+							<div class="orido_tm_main_title">
+								<h3>
+									<span>一个路人</span>
+								</h3>
+							</div>
+							<div class="text">
+								<p style="color: skyblue">我很平凡，究竟有多平凡呢？我的评价是：“我很平凡”。我不但平凡，还会很多东西，饿了会吃饭，困了会睡觉，下雨会往家跑...
+	<br>
+	
+	</p>
+							</div>
+							<div class="short">
+								<div class="orido_tm_boxed_button">
+									<a href="img/cv/1.jpg"
+									   download onclick="alert('抱歉，暂时没有可下载的信息表');return false;">下载CSV信息表
+										<img class="svg"
+											 src="img/svg/paper.svg"
+											 alt="" />
+									</a>
+								</div>
+								<img src="img/signature.png"
+									 alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 信息部分 -->
+			<div class="orido_tm_section">
+				<div class="orido_tm_informations">
+					<div class="container">
+						<div class="informations_inner">
+							<div class="left">
+								<div class="orido_tm_main_title">
+									<h3>
+										<span style="font-size:36px;color: darkgreen;">不经意的过程
+										</span>
+											<br/><span style="font-size:24px;color: fuchsia;">
+				各层次人生理想皆是向往静谧</span>
+				</h3>
+								</div>
+								<div class="text">
+									<p>YU WEI LAN</p>
+									<p>CN-HN-04-LE-OV-QI-SP-10</p>
+								</div>
+								<!-- <div class="orido_tm_boxed_button">
+									<a href="#">待使用
+										<img class="svg"
+											 src="img/svg/paper.svg"
+											 alt="" />
+									</a>
+								</div> -->
+							</div>
+							<div class="right">
+								<div class="filter">
+									<ul>
+										<li>
+											<a class="current"
+											   href="#"
+											   data-tab="tab_1">
+												<span>亦学</span>
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</a>
+										</li>
+										<li>
+											<a href="#"
+											   data-tab="tab_2">
+												<span>了识</span>
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</a>
+										</li>
+										
+										<!-- <li>
+											<a href="#"
+											   data-tab="tab_3">
+												<span>预解</span>
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</a>
+										</li> -->
+										
+									</ul>
+									<span class="ccc"></span>
+								</div>
+								<div class="content">
+									<div id="tab_1"
+										 class="wrapper current">
+										<div class="skillbox">
+											<ul>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/flstudio.png" width="22px" height="20px"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">FL Studio <span></span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/Ae.svg"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">After Effect <span></span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/photoshop.svg"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">Photoshop <span></span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/premiere.png"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">Premiere Pro <span></span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/illustrator.svg"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">Illustrator <span></span>
+														</p>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<span class="icon">
+															<span class="in">
+																<img class="svg"
+																	 src="img/svg/blender.svg"
+																	 alt="" />
+															</span>
+														</span>
+														<p class="name">Blender <span></span>
+														</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div id="tab_2"
+										 class="wrapper">
+										<div class="timelinebox">
+											<ul>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">Apk/Exe分析</span>
+															<span class="company">此项可以分析文件相关布局及资源文件并进行逆向编译。</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>M+N+Z+E+S</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">超分、帧率优化</span>
+															<span class="company">此项可以对受损图像进行画质修复及扩展、对视频扩展及混合相邻帧或利用光流算法进行帧率修补。</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>Realesrgan/S+M</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">系统优化、调试</span>
+															<span class="company">优化系统各项配置文件、修复底层环境冗余缓存并修复错误。对无法修复的配置进行重建处理。</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>OS+UI+ADB</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">“未来可期”</span>
+															<span class="company">未来可期，遇见即缘。</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>Info Loading...</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									
+									<!-- <div id="tab_3"
+										 class="wrapper">
+										<div class="timelinebox">
+											<ul>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">aaa</span>
+															<span class="company">aaa</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>aaa</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">bbb</span>
+															<span class="company">bbb</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>bbb</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">ccc</span>
+															<span class="company">ccc</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>ccc</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_inner">
+														<div class="time">
+															<span class="year">ddd</span>
+															<span class="company">ddd</span>
+														</div>
+														<div class="job">
+															<h3>
+																<span>ddd</span>
+															</h3>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div> -->
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- 计数 -->
+			<!-- <div class="orido_tm_section">
+				<div class="orido_tm_counter">
+					<div class="container">
+						<div class="counter_list">
+							<ul>
+								<li>
+									<div class="list_inner">
+										<h3>
+											<span class="counter_item"
+												  data-from="0"
+												  data-to="219"
+												  data-speed="2000">0</span>
+										</h3>
+										<span class="title">Trainings</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<h3>
+											<span class="counter_item"
+												  data-from="0"
+												  data-to="48"
+												  data-speed="2000">0</span>
+										</h3>
+										<span class="title">Written Book</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<h3>
+											<span class="counter_item"
+												  data-from="0"
+												  data-to="527"
+												  data-speed="2000">0</span>
+										</h3>
+										<span class="title">Listeners</span>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<h3>
+											<span class="counter_item"
+												  data-from="0"
+												  data-to="12"
+												  data-speed="2000">0</span>
+										</h3>
+										<span class="title">Own Projects</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		
+
+			<!-- 内容 -->
+			<div class="orido_tm_section"
+				 id="service">
+				<div class="orido_tm_service">
+					<div class="container">
+						<div class="orido_tm_main_title">
+							<h3>
+								<span>不起眼的简介
+								</span>
+							</h3>
+							<span>Tips：点击卡片可展开详细内容。</span>
+						</div>
+						<div class="service_list">
+							<ul>
+								<li class="current">
+									<div class="list_inner">
+										<div class="left">
+											<span class="number">01</span>
+											<h3 class="title">音乐作品</h3>
+										</div>
+										<div class="right">
+											<div class="text">
+												<p>音乐是我离不开的喜好，每天再忙我至少也会听一小会儿。关于我自己的音乐作品不过只是无意中做出来的，其工程与企业或专业人士无法相比。</p>
+											</div>
+											<div class="arrow">
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</div>
+										</div>
+										<a class="orido_tm_full_link"
+										   href="#"></a>
+
+										<!-- Modalbox Info Start -->
+										<img class="popup_service_image"
+											 src="img/service/1.jpg"
+											 alt="" />
+										<div class="service_hidden_details">
+											<div class="service_popup_informations">
+												<div class="descriptions">
+													<p>从小我就喜欢听音乐，所以我小时候有颗小小的理想种子——音乐梦。这一梦想直到22年5月初，我初次开始尝试编曲，经过我四天多的课余时间的制作，第一首[Fantasy]于11日正式发布于多个平台。我的第一张数字专辑的诞生了。起始，我不知道如何命名，便从常见的英语单词里挑了一个。并编写了不知道什么意思的伪文言文简介。</p>
+													<p>在第一首单曲专辑发布后，我马上着手第二首曲子的制作，这次我在整体曲子里添加一小点电子元素使其不那么普通。后面便如之前那样，相继发布新的专辑。</p>
+													<p>之后我以其它方向相往，便不再着手制作了，不过，或许我以后还会做吧，不知道是多久。</p>
+												</div>
+											</div>
+										</div>
+										<!-- /Modalbox Info End -->
+
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<span class="number">02</span>
+											<h3 class="title">软件兴趣</h3>
+										</div>
+										<div class="right">
+											<div class="text">
+												<p>软件这一块是我专修的模糊方向。掌握多门技术以备不时之需。</p>
+											</div>
+											<div class="arrow">
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</div>
+										</div>
+										<a class="orido_tm_full_link"
+										   href="#"></a>
+
+										<!-- Modalbox Info Start -->
+										<img class="popup_service_image"
+											 src="img/service/2.jpg"
+											 alt="" />
+										<div class="service_hidden_details">
+											<div class="service_popup_informations">
+												<div class="descriptions">
+													<p>这一块便是我最爱的内容，我在小学二年级的时候便接触了早期的Symbian OS，这使我非常好奇，从小别人的兴趣爱好都是一些常见的，从来他人没有对这一方面感到好奇，只有我爱好这些问题。后面我又接触到早期的Android OS，从中获取的信息便越来越多。</p>
+													<p>后面初中时期我就已经可以进行基本的逆向分析了，不过那时留给我的时间并不多。再继续成长时我开始自己抽取时间自力去了解并学习的内容，关于在别人玩的时候内卷这件事情，我只能说“泰裤辣！” 这些也是奠定我现在成果的基础。现在我已经能掌握主流的专业处理软件。各种常见的媒体文件及文档数据类型的文件，我大多都知道如何处理。</p>
+													<p>虽然我掌握的范围很广，但是还没有深入学习。没事，不急，路还很长，我还有进步的空间，我与他人及世界共同进步。各位加油！！！</p>
+												</div>
+											</div>
+										</div>
+										<!-- /Modalbox Info End -->
+
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<span class="number">03</span>
+											<h3 class="title">硬件与系统</h3>
+										</div>
+										<div class="right">
+											<div class="text">
+												<p>在使用相关的设备当中，我们大多都会遇到问题，自己解决才是非常nice的。</p>
+											</div>
+											<div class="arrow">
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</div>
+										</div>
+										<a class="orido_tm_full_link"
+										   href="#"></a>
+
+										<!-- Modalbox Info Start -->
+										<img class="popup_service_image"
+											 src="img/service/3.jpg"
+											 alt="" />
+										<div class="service_hidden_details">
+											<div class="service_popup_informations">
+												<div class="descriptions">
+													<p>在信息化的时代，一切离不开相关设备的支持，一旦设备“病了”那么第一反应就是烦恼。我和其多数人一样，曾经历过那种烦恼和无奈感。这种感觉就像是一个人在这个世界里，充满无尽的孤独及恐惧。</p>
+													<p>从硬件来说，这一块是我们无法细微修复的东西，不过可以从一些监测器来获取信息并尝试解决或者屏蔽相关问题。PC硬件结构高度的DIY性，这也代表了维护的步骤更便捷，但同时问题也会越来越多，这时，从哪个角度下手开始就显得很重要。从早期的案例模板上手，再到自己有机会遇到一些问题并解决，至目前我掌握了怎样维护系统及硬件的多种方法。</p>
+													<p>不过这只是冰山一角，目前设备众多，参数也加之复杂，难免会遇见无法解决的问题，这是无能为力的，只能抓紧时间掌握更多的方法。</p>
+												</div>
+											</div>
+										</div>
+										<!-- /Modalbox Info End -->
+
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<span class="number">04</span>
+											<h3 class="title">生活中的微微</h3>
+										</div>
+										<div class="right">
+											<div class="text">
+												<p>我，很普通，普通得像个普通人。</p>
+											</div>
+											<div class="arrow">
+												<img class="svg"
+													 src="img/svg/top-arrow.svg"
+													 alt="" />
+											</div>
+										</div>
+										<a class="orido_tm_full_link"
+										   href="#"></a>
+
+										<!-- Modalbox Info Start -->
+										<img class="popup_service_image"
+											 src="img/service/4.jpg"
+											 alt="" />
+										<div class="service_hidden_details">
+											<div class="service_popup_informations">
+												<div class="descriptions">
+													<p>这个没啥说的。结合总体来说，我应该会继续进步的。emmmmm...嗯！</p>
+													<p>一定会的！！！</p>
+													<p>加油！！！</p>
+												</div>
+											</div>
+										</div>
+										
+
+									</div>
+								</li>
+								
+							</ul>
+							<span class="ccc"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- PORTFOLIO -->
+			<div class="orido_tm_section"
+				 id="portfolio">
+				<div class="orido_tm_portfolio">
+					<div class="container">
+						<div class="orido_tm_main_title">
+							<h3>
+								<span>其它链接
+									
+								</span>
+							</h3>
+						</div>
+						<div class="portfolio_list">
+							<ul class="owl-carousel gallery_zoom">
+								<li>
+									<div class="list_inner">
+										<div class="image">
+											<img src="img/thumbs/37-40.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/portfolio/1.jpg"></div>
+										</div>
+										<div class="details">
+											<span class="category">没错，我在套娃</span>
+											<h3 class="title">
+												<span>Lande Space</span>
+											</h3>
+										</div>
+										<a class="orido_tm_full_link popup-youtube"
+										   href="https://landesr.icu"></a>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="image">
+											<img src="img/thumbs/37-40.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/portfolio/2.jpg"></div>
+										</div>
+										<div class="details">
+											<span class="category">有事请联系me。</span>
+											<h3 class="title">
+												<span>Add My Q</span>
+											</h3>
+										</div>
+										<a class="orido_tm_full_link popup-qq"
+										   href="https://qm.qq.com/q/hL7YRNwXlK"></a>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="image">
+											<img src="img/thumbs/37-40.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/portfolio/3.jpg"></div>
+										</div>
+										<div class="details">
+											<span class="category">QQ音乐主页</span>
+											<h3 class="title">
+												<span></span>
+											</h3>
+										</div>
+										<a class="orido_tm_full_link soundcloude_link mfp-iframe audio"
+										   href="https://y.qq.com/n/ryqq/singer/0048UB1y19Cv7l"></a>
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="image">
+											<img src="img/thumbs/37-40.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/portfolio/4.jpg"></div>
+										</div>
+										<div class="details">
+											<span class="category">微信公众平台</span>
+											<h3 class="title">
+												<span>WeChat Text</span>
+											</h3>
+										</div>
+										<a class="orido_tm_full_link details_link"
+										   href="#"></a>
+
+										<!-- Modalbox Info Start -->
+										<div class="hidden_content">
+											<div class="popup_details">
+												<div class="main_details">
+													<div class="textbox">
+														<p>这里是网络世界中的冰山一角。</p>
+														<p>此公众平台用于分享一些比较使用的内容（虽然放在那吃灰这么久了），不过目前还没时间发布内容。问题不大，总会有有一天，我会想起来我还有这个小小的世界。</p>
+													</div>
+													<div class="detailbox">
+														<ul>
+															<li>
+																<span class="first">运营：</span>
+																<span>Vnkus Lande</span>
+															</li>
+															<li>
+																<span class="first">性质：</span>
+																<span>
+																	<a href="#">实用工具</a>
+																</span>
+															</li>
+															<li>
+																<span class="first">首次公布：</span>
+																<span>2023-07-30 18:10</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="additional_images">
+													<ul>
+														<li>
+															<div class="list_inner">
+																<div class="my_image">
+																	<img src="img/thumbs/4-2.jpg"
+																		 alt="" />
+																	<div class="main"
+																		 data-img-url="img/service/1.jpg"></div>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="list_inner">
+																<div class="my_image">
+																	<img src="img/thumbs/4-2.jpg"
+																		 alt="" />
+																	<div class="main"
+																		 data-img-url="img/service/2.jpg"></div>
+																</div>
+															</div>
+														</li>
+														<li>
+															<div class="list_inner">
+																<div class="my_image">
+																	<img src="img/thumbs/4-2.jpg"
+																		 alt="" />
+																	<div class="main"
+																		 data-img-url="img/service/3.jpg"></div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="image">
+											<img src="img/thumbs/37-40.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/portfolio/5.jpg"></div>
+										</div>
+										<div class="details">
+											<span class="category">资源小站</span>
+											<h3 class="title">
+												<span>Res Of Lande</span>
+											</h3>
+										</div>
+										<a class="orido_tm_full_link popup-qq"
+										   href="http://lande.ysepan.com/"></a>
+									</div>
+								</li>
+							</ul>
+							<a class="prev_button"
+							   href="#">
+								<img class="svg"
+									 src="img/svg/prev.svg"
+									 alt="" />
+							</a>
+							<a class="next_button"
+							   href="#">
+								<img class="svg"
+									 src="img/svg/next.svg"
+									 alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- TESTIMONIALS -->
+			
+			<!-- <div class="orido_tm_section">
+				<div class="orido_tm_testimonials">
+					<div class="container">
+						<div class="orido_tm_main_title">
+							<h3>
+								<span>Valuable feedback
+									<br />from my client</span>
+							</h3>
+						</div>
+						<div class="testimonials_in">
+							<img src="img/testimonials/1.jpg"
+								 alt="" />
+							<div class="info">
+								<div class="text">
+									<p>aaa</p>
+								</div>
+								<div class="details">
+									<h3 class="name">
+										<span>Albert Walkers</span>
+									</h3>
+									<span class="job">Vivaco Group</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- 文章 -->
+			<div class="orido_tm_section"
+				 id="blog">
+				<div class="orido_tm_news">
+					<div class="container">
+						<div class="orido_tm_main_title">
+							<h3>
+								<span>动态
+									<br/>内容</span>
+							</h3>
+						</div>
+						
+						<div class="news_list">
+							<ul>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<div class="metabox">
+												<ul>
+													<li>
+														<span>
+															<a href="#">Lande</a>
+														</span>
+													</li>
+													<li>
+														<span>23-12-20</span>
+													</li>
+												</ul>
+											</div>
+											<div class="title">
+												<h3>
+													<a href="#">暂无内容</a>
+												</h3>
+											</div>
+											<div class="orido_tm_simple_button">
+												<a class="line_effect"
+												   href="#">待补...
+													<img class="svg"
+														 src="img/svg/top-arrow.svg"
+														 alt="" />
+												</a>
+											</div>
+										</div>
+										<div class="right">
+											<img src="img/thumbs/24-20.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/news/1.jpg"></div>
+											<a class="orido_tm_full_link"
+											   href="#"></a>
+										</div>
+										<span class="shape">
+											<img class="svg"
+												 src="img/svg/Intersect.svg"
+												 alt="" />
+										</span>
+
+										<!-- Modalbox Info Start -->
+										<div class="news_hidden_details">
+											<div class="news_popup_informations">
+												<div class="text">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<div class="metabox">
+												<ul>
+													<li>
+														<span>
+															<a href="#">Lande</a>
+														</span>
+													</li>
+													<li>
+														<span>23-12-20</span>
+													</li>
+												</ul>
+											</div>
+											<div class="title">
+												<h3>
+													<a href="#">暂无内容</a>
+												</h3>
+											</div>
+											<div class="orido_tm_simple_button">
+												<a class="line_effect"
+												   href="#">待补...
+													<img class="svg"
+														 src="img/svg/top-arrow.svg"
+														 alt="" />
+												</a>
+											</div>
+										</div>
+										<div class="right">
+											<img src="img/thumbs/24-20.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/news/1.jpg"></div>
+											<a class="orido_tm_full_link"
+											   href="#"></a>
+										</div>
+										<span class="shape">
+											<img class="svg"
+												 src="img/svg/Intersect.svg"
+												 alt="" />
+										</span>
+
+										<!-- Modalbox Info Start -->
+										<div class="news_hidden_details">
+											<div class="news_popup_informations">
+												<div class="text">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+											</div>
+										</div>
+										
+
+									<!-- </div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<div class="metabox">
+												<ul>
+													<li>
+														<span>
+															<a href="#">John Smith</a>
+														</span>
+													</li>
+													<li>
+														<span>02 June, 2022</span>
+													</li>
+												</ul>
+											</div>
+											<div class="title">
+												<h3>
+													<a href="#">Diversification of digital marketing stategies</a>
+												</h3>
+											</div>
+											<div class="orido_tm_simple_button">
+												<a class="line_effect"
+												   href="#">Read More
+													<img class="svg"
+														 src="img/svg/top-arrow.svg"
+														 alt="" />
+												</a>
+											</div>
+										</div>
+										<div class="right">
+											<img src="img/thumbs/24-20.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/news/3.jpg"></div>
+											<a class="orido_tm_full_link"
+											   href="#"></a>
+										</div>
+										<span class="shape">
+											<img class="svg"
+												 src="img/svg/Intersect.svg"
+												 alt="" />
+										</span>
+
+										
+										<div class="news_hidden_details">
+											<div class="news_popup_informations">
+												<div class="text">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+											</div>
+										</div>
+										
+
+									</div>
+								</li>
+								<li>
+									<div class="list_inner">
+										<div class="left">
+											<div class="metabox">
+												<ul>
+													<li>
+														<span>
+															<a href="#">John Smith</a>
+														</span>
+													</li>
+													<li>
+														<span>02 June, 2022</span>
+													</li>
+												</ul>
+											</div>
+											<div class="title">
+												<h3>
+													<a href="#">Diversification of digital marketing stategies</a>
+												</h3>
+											</div>
+											<div class="orido_tm_simple_button">
+												<a class="line_effect"
+												   href="#">Read More
+													<img class="svg"
+														 src="img/svg/top-arrow.svg"
+														 alt="" />
+												</a>
+											</div>
+										</div>
+										<div class="right">
+											<img src="img/thumbs/24-20.jpg"
+												 alt="" />
+											<div class="main"
+												 data-img-url="img/news/4.jpg"></div>
+											<a class="orido_tm_full_link"
+											   href="#"></a>
+										</div>
+										<span class="shape">
+											<img class="svg"
+												 src="img/svg/Intersect.svg"
+												 alt="" />
+										</span>
+
+										
+										<div class="news_hidden_details">
+											<div class="news_popup_informations">
+												<div class="text">
+													<p></p>
+													<p></p>
+													<p></p>
+												</div>
+											</div>
+										</div> -->
+										
+
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 关联 -->
+			<div class="orido_tm_section">
+				<div class="orido_tm_partners">
+					<div class="container">
+						<div class="partners_list">
+							<ul class="owl-carousel">
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/1.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/2.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/3.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/4.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/5.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/6.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/7.png"
+											 alt="" />
+									</a>
+								</li>
+								<li class="item">
+									<a href="#">
+										<img src="img/partners/8.png"
+											 alt="" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+			<!-- 终章 -->
+			<div class="orido_tm_section"
+				 id="contact">
+				<div class="orido_tm_contact">
+					<div class="container">
+						<div class="infobox">
+							<div class="video_button">
+								<a href="http://tmjf-vnku139.ysepan.com/login.aspx?d=tmjf-vnku139">
+									<img class="anim_circle"
+										 src="img/contact/video.png"
+										 alt="" />
+									<img class="svg"
+										 src="img/svg/play.svg"
+										 alt="" />
+								</a>
+							</div>
+							<div class="text">
+								<h3>Wecome Lande Space</h3>
+								<p>唯一地址：landesr.icu
+								</p>
+							</div>
+							<div class="orido_tm_boxed_button">
+								<a href="#">终返
+									<img class="svg"
+										 src="img/svg/send.svg"
+										 alt="" />
+								</a>
+							</div>
+						</div>
+						<div class="connect">
+							<div class="left">
+								<ul>
+									<li>
+										<span class="name">QQ:</span>
+										<p>
+											<a class="line_effect"
+											   href="#">3094839098</a>
+										</p>
+									</li>
+									<li>
+										<span class="name">Email:</span>
+										<p>
+											<a class="line_effect"
+											   href="#">landesr@vip.qq.com</a>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div class="right">
+								<div class="orido_tm_follow">
+									<span>弦作:</span>
+									<ul>
+										<li>
+											<a href="https://y.qq.com/n/ryqq/singer/0048UB1y19Cv7l">
+												<img class="svg"
+													 src="img/svg/social/qqmusic.svg"
+													 alt="" />
+											</a>
+										</li>
+										<li>
+											<a href="http://lande.ysepan.com/">
+												<img class="svg"
+													 src="img/svg/social/dribbble.svg"
+													 alt="" />
+											</a>
+										</li>
+										<li>
+											
+											<!-- <a href="#">
+												<img class="svg"
+													 src="img/svg/social/instagarm.svg"
+													 alt="" />
+											</a> -->
+											
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<span class="element">
+						<img class="svg"
+							 src="img/svg/elements.svg"
+							 alt="" />
+					</span>
+					<span class="element2">
+						<img class="svg"
+							 src="img/svg/element-2.svg"
+							 alt="" />
+					</span>
+				</div>
+			</div>
+			<!-- /CONTACT -->
+
+			<!-- COPYRIGHT -->
+			<div class="orido_tm_section">
+				<div class="orido_tm_copyright">
+					<div class="container">
+						<div class="copyright_inner">
+							<div class="logo">
+								<img src="img/logo/logo.png"
+									 alt="" />
+							</div>
+							<div class="copy">
+								<p>&copy; 2023 By <a href="https://landesr.icu/">LandeSR</a> All Rights Reserved</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /COPYRIGHT -->
+
+			<!-- CURSOR -->
+			<div class="mouse-cursor cursor-outer"></div>
+			<div class="mouse-cursor cursor-inner"></div>
+			<!-- /CURSOR -->
+
+			<!-- TOTOP -->
+			<div class="progressbar">
+				<a href="#">
+					<span class="text">To Top</span>
+				</a>
+				<span class="line"></span>
+			</div>
+			<!-- /TOTOP -->
+
 		</div>
+		<!-- / WRAPPER ALL -->
+
+		<!-- SCRIPTS -->
+		<script src="js/jquery.js"></script>
+		<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
+		<script src="js/plugins.js"></script>
+		<script src="js/init.js"></script>
+		<!-- /SCRIPTS -->
 
 	</body>
 </html>
