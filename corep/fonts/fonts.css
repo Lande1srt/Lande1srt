@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Vonbit";       
+    src:url("VonwaonBitmap-16px.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Zhankulogo";       
+    src:url("ZhanKuXiaoWeiLOGOTi-2.otf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Yunfan";       
+    src:url("YuFanXinYu-Light.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MeiguiAY";       
+    src:url("LangManDeShiMeiGuiHeNi.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "YSBiaoti";       
+    src:url("YouSheBiaoTiHei-2.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChillR";       
+    src:url("ChillReunion_45S.otf");    
+    font-weight: normal;
+    font-style: normal;
+}
