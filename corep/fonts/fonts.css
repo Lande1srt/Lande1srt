@@ -32,3 +32,20 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "Sounso";       
+    src:url("Sounso-Quality-2.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Crystal";       
+    src:url("Crystal-Light-2.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
