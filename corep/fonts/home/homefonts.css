@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Crystal";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/Crystal-Light-2.ttf");
+	src:url("Crystal-Light-2.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GSlab";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/GetboregSlab-X3gga.ttf");
+	src:url("GetboregSlab-X3gga.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Omegle";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/OmegleRegular-gxDaq.otf");
+	src:url("OmegleRegular-gxDaq.otf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rainbow";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/Rainbow-Party-2.ttf");
+	src:url("Rainbow-Party-2.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Specia";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/SpecialElite-Regular.ttf");
+	src:url("SpecialElite-Regular.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Kufang";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/Kufang.ttf");
+	src:url("Kufang.ttf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChillR";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/ChillReunion_45S.otf");
+	src:url("ChillReunion_45S.otf");    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Meigui";       
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/home/LangManDeShiMeiGuiHeNi-3500.ttf");
+	src:url("LangManDeShiMeiGuiHeNi-3500.ttf"););
+    font-weight: normal;
+    font-style: normal;
+}
+
+
