@@ -1,48 +1,55 @@
 @font-face {
     font-family: "Vonbit";       
-    src:url("VonwaonBitmap-16px.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/VonwaonBitmap-16px.ttf");
+	src:url("VonwaonBitmap-16px.ttf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Yunfan";       
-    src:url("YuFanXinYu-Light.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/YuFanXinYu-Light.ttf");
+	src:url("YuFanXinYu-Light.ttf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "MeiguiAY";       
-    src:url("LangManDeShiMeiGuiHeNi.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/LangManDeShiMeiGuiHeNi.ttf");
+	src:url("LangManDeShiMeiGuiHeNi.ttf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "YSBiaoti";       
-    src:url("YouSheBiaoTiHei-2.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/YouSheBiaoTiHei-2.ttf");
+	src:url("YouSheBiaoTiHei-2.ttf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "ChillR";       
-    src:url("ChillReunion_45S.otf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/ChillReunion_45S.otf");
+	src:url("ChillReunion_45S.otf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Sounso";       
-    src:url("Sounso-Quality-2.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/Sounso-Quality-2.ttf");
+	src:url("Sounso-Quality-2.ttf");    
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Crystal";       
-    src:url("Crystal-Light-2.ttf");    
+    src:url("https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/Crystal-Light-2.ttf");
+	src:url("Crystal-Light-2.ttf");    
     font-weight: normal;
     font-style: normal;
 }
