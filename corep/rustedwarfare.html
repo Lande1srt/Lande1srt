@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-rCN" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+<link rel="icon" href="icon/rwicon.png" sizes="16x16">
+
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Catamaran';
+html,
+body,
+.background {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: relative;
+  background: linear-gradient(120deg, rgba(50, 150, 100, 0.6), rgba(0, 0, 100, 0));
+}
+.background:before, .background:after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 200, 0.6), rgba(0, 0, 200, 0));
+}
+.background:after {
+  background: linear-gradient(240deg, rgba(150, 50, 50, 0.6), rgba(0, 0, 200, 0));
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Catamaran", sans-serif;
+}
+
+body {
+  background: #eeeeff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+svg {
+  z-index: 10;
+}
+svg .letter {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
+
+.blinky-mcblinkface {
+  -webkit-animation: 1s blink step-end infinite;
+          animation: 1s blink step-end infinite;
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+#toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+#toggle a {
+  color: white;
+  text-decoration: none;
+}
+#toggle a:hover {
+  color: #eee;
+}
+</style>
+</head>
+<body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+<!-- partial:index.partial.html -->
+
+<div class="container background">
+	<svg id="svg">
+		<defs>
+			
+<g id="letter-z">
+	<path class="letter" d="M16.3,24.5l-29.1-2.1l29.1-39.5h-29.1"/>
+</g>
+<g id="letter-y">
+	<path class="letter" d="M-11.8-14.2L5.9,1.4"/>
+	<path class="letter" d="M15.2-20.9L-5.3,28.3"/>
+</g>
+<g id="letter-x">
+	<path class="letter" d="M18.8-10.5l-34.2,35.4"/>
+	<path class="letter" d="M-11-19.5l26.7,46.4"/>
+</g>
+<g id="letter-w">
+	<path class="letter" d="M22.8-14.4L7.4,21.7L-2.4,7.6l-10.2,14.1l-6.8-34"/>
+</g>
+<g id="letter-v">
+	<path class="letter" d="M16.1-16.3l-13.5,40l-15.2-40"/>
+</g>
+<g id="letter-u">
+	<path class="letter" d="M-14.5-18.9v34.3c0,0,0.2,10.1,7.7,10.6s17.3,0,17.3,0s7.7-1.6,7.4-9.7c-0.3-8.1,0-35.2,0-35.2"/>
+</g>
+<g id="letter-t">
+	<path class="letter" d="M-17.7-17.7h38.8"/>
+	<path class="letter" d="M1.1,25l0.6-42.7"/>
+</g>
+<g id="letter-s">
+	<path class="letter" d="M13.8-10.3c-1.6-4.3-5.9-7.5-11.1-8c-6.5-0.6-12,3.2-13.9,7.4c-1.7,3.8-0.5,8,2,10.8c4.3,4.8,8.7,5.4,17.3,8
+		c5.3,1.6,7.8,5.5,6.9,10.2c-0.7,3.9-5.4,6.7-9.7,7.4c-6.5,1-14-2.8-17.3-9.7"/>
+</g>
+<g id="letter-r">
+	<path class="letter" d="M-10.8,28.6l0.7-49.2v-0.2c9.6-2.5,19.4,1.1,22.9,7.7c2.6,4.8,2,11.7-3.5,16.1C3.9,7.3-4.4,7.9-10.8,4.3"/>
+	<path class="letter" d="M0.1,6.6l14.2,22.2"/>
+</g>
+<g id="letter-q">
+	<path class="letter" d="M0,22c-9.6,0-16.8-10.3-16.6-19.7c0.2-9.5,8-19.2,17.3-18.9C10.5-16.2,17.5-5,16.5,4.7C15.8,12.9,9,22,0,22z
+		"/>
+	<path class="letter" d="M0.3,4.3C9.8,19.6,11.8,23.2,20,24"/>
+</g>
+<g id="letter-p">
+	<path class="letter" d="M-13.3-17.6c18,2.8,30.1,8.6,30,13.4c-0.2,4.6-11.4,9-26,11"/>
+	<path class="letter" d="M-10.7,25l4.6-39"/>
+</g>
+<g id="letter-n">
+	<path class="letter" d="M15.4-17.6L14.6,21L-12-7.4V25"/>
+</g>
+<g id="letter-m">
+	<path class="letter" d="M26.7,27.3L11.4-20L-1.8,2.9l-8.7-18.1L-23.3,21"/>
+</g>
+<g id="letter-l">
+	<path class="letter" d="M13.3,26.1H-9.9v-44.9"/>
+</g>
+<g id="letter-k">
+	<path class="letter" d="M-9.7-18.8l0.8,44.9"/>
+	<path class="letter" d="M3.8-16.4L-9.3,5.8"/>
+	<path class="letter" d="M13.1,19.3L-9.3,5.8"/>
+</g>
+<g id="letter-j">
+	<path class="letter" d="M4.5-13c4.7,24.3,4.7,37.4,0,39.4C1.3,27.8-4,24-11.3,15.4"/>
+	<path class="letter" d="M-8.1-7.9l22.9-11.4"/>
+</g>
+<g id="letter-i">
+	<path class="letter" d="M1.7-18.8v44.9"/>
+</g>
+<g id="letter-h">
+	<path class="letter" d="M-9.7-16.7l0,40.7"/>
+	<path class="letter" d="M13.9-16.7l0,40.7"/>
+	<path class="letter" d="M13.9,7.5l-24.4,0"/>
+</g>
+<g id="letter-g">
+	<path class="letter" d="M7.8,3.4l10.3,0.3v20c-9.7,5.4-21,5-28.4-0.8C-21.9,13.6-21.4-8-8.7-16.5c8.6-5.8,21.3-4.7,30.7,3.2"/>
+</g>
+<g id="letter-f">
+	<path class="letter" d="M20.9-17.2l-28.1,0.8l1.6,41"/>
+	<path class="letter" d="M4.7,0.9l-22.2,0.8"/>
+</g>
+<g id="letter-e">
+	<path class="letter" d="M8.4,3.6l-21.3,0.5"/>
+	<path class="letter" d="M16.3-18.9l-24.4,0.8l-0.8,44.5l22.9-0.2"/>
+</g>
+<g id="letter-d">
+	<path class="letter" d="M-6.6-20.1l-1.6,47.5"/>
+	<path class="letter" d="M-18.4-11.4c13.7-9.6,31.1-6,37.8,4.7c5,8,4.1,19.5-2.4,26.8c-8.4,9.3-24.8,10.2-36.3,0"/>
+</g>
+<g id="letter-o">
+	<path class="letter" d="M1.7,23c-9.6,0-16.8-10.3-16.6-19.7c0.2-9.5,8-19.2,17.3-18.9C12.2-15.2,19.2-4,18.2,5.7
+		C17.4,13.9,10.7,23,1.7,23z"/>
+</g>
+<g id="letter-c">
+	<path class="letter" d="M18.2-13.6c0,0-27.3-21.4-32.5,17.1s32.5,17.7,32.5,17.7"/>
+</g>
+<g id="letter-a">
+	<path class="letter" d="M-12.2,27.5L0.5-20.1l18.6,43.8"/>
+	<path class="letter" d="M-15.6,12.4l34.7-8.7"/>
+</g>
+<g id="letter-b">
+	<path class="letter" d="M-4.5-16.5l-2.6,44.6"/>
+	<path class="letter" d="M-20.1-9.6c0,0,26.9-19.5,34.7-6.9C20.9-6.4,0,1.7,0,1.7s23.7-6.5,23.5,11.7c-0.3,25.7-39.4,6.8-39.4,6.8"/>
+</g>
+
+
+		</defs>
+		<g id="stage"></g>
+		</svg>
+</div>
+<p style="text-align: center;"><a href="https://vip.123pan.cn/1662268/LandeSR/RWPC1.15/Rusted%20Warfare-PC1.15.zip"><img src="https://vip.123pan.cn/1662268/LandeSR/RWPC1.15/dl.png" alt="rw" width="20px" /></a></p>
+<div id="toggle"><a href="#">Loading</a></div>
+<!-- partial -->
+<script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/snap.svg-0.4.1.js"></script>
+<script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/TweenMax.min.js"></script>
+
+<!-- 
+<script>
+    ;(function() {
+
+    var icon = '<svg class="sg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.31 251.89"><path d="M66.8,144.17c0-66.24,22.46-113.09,80.72-112.32,81.48,1.07,80.72,46.08,80.72,112.32,0,5.15,8.38,3.81,7.62,19-2.28,19.42-9.44,14.63-10.39,19.85-9.26,51.08-40.65,88.67-77.95,88.67-37.76,0-69.47-38.53-78.28-90.58-.82-4.85-5.86-.8-6.42-18.68C61.47,146.07,66.8,149.07,66.8,144.17Z" transform="translate(-56.6 -25.84)" style="fill:#ffdfbf;fill-rule:evenodd"/><path d="M147.52,31.85C99.49,31.22,75.79,63,69,111.24c8.78-23.84,27.86-26,64.33-26.54,70.62-1.13,88.39,8.27,79.64,96.55-1.84,18.6-6.1,24.62-28.36,39.74-12.07,8.2,18.54-26.37-49.78-27-49.5-.43-30.06,36.41-40.06,29.44a81.88,81.88,0,0,1-20.28-20.73c12.89,40.76,40.76,69,73.08,69,37.3,0,68.69-37.59,77.95-88.67l2.77-38.89C228.24,77.93,229,32.91,147.52,31.85Z" transform="translate(-56.6 -25.84)" style="fill:#d0b57b;fill-rule:evenodd"/><path d="M146.13,31.84h1.39c81.48,1.07,80.72,46.08,80.72,112.33,0,5.15,8.38,3.81,7.62,19-2.28,19.42-9.44,14.63-10.39,19.85-9.26,51.08-40.65,88.67-77.95,88.67-37.76,0-69.47-38.53-78.28-90.58-.82-4.85-5.86-.8-6.42-18.68-1.34-16.39,4-13.39,4-18.29,0-65.71,22.11-112.33,79.33-112.33m0-6h0c-29.39,0-51.65,11.54-66.18,34.3C67.3,80,60.86,108.06,60.8,143.68h0c-2.54,3.05-4.94,7-4,19.12.4,12.11,2.72,16.46,6.59,19.86,9.65,56,44.19,95.07,84.11,95.07,19.91,0,38.59-9.42,54-27.25,14.35-16.57,24.87-39.79,29.66-65.45l0,0c4.22-2.57,8.87-6.53,10.58-21.1l0-.2v-.2c.58-11.55-3.35-16.18-7.07-19.61l-.53-.5v-1c0-33,0-61.46-10.76-82.11-12-23-36.09-33.89-75.88-34.41Z" transform="translate(-56.6 -25.84)" style="fill:#303030"/><path d="M118.31,183.29s4.28,4.28,12.84,4S143.67,182,143.67,182s-3.62,8.23-11.53,8.89S118.31,183.29,118.31,183.29Z" transform="translate(-56.6 -25.84)" style="fill:#bfa78f;fill-rule:evenodd"/><ellipse cx="44.24" cy="115.64" rx="28.15" ry="35.97" style="fill:#fff"/><ellipse cx="104.54" cy="115.64" rx="28.15" ry="35.97" style="fill:#fff"/><circle class="eye" id="eye-left" cx="35.9" cy="121.66" r="10.5" style="fill:#303030"/><circle class="eye" cx="94.57" cy="121.66" r="10.5" style="fill:#303030"/><path d="M140.74,236.63h0c-16.92,0-29.43-4.38-29.43-18.42h0c0-4.22,4.12-7.64,9.21-7.64H160c3.6,0,6.53,2.42,6.53,5.42v7.23C166.55,234.48,154.32,236.63,140.74,236.63Z" transform="translate(-56.6 -25.84)" style="fill:#2d251d;fill-rule:evenodd"/><path d="M160,210.57h-39.5c-5.09,0-9.21,3.42-9.21,7.64,0,.07,0,.15,0,.22,7.57,2.29,17.6,3.2,29,3.2h0c9.87,0,19.24-.52,26.25-2.36V216C166.55,213,163.62,210.57,160,210.57Z" transform="translate(-56.6 -25.84)" style="fill:#fff"/></svg>';
+
+    document.head.insertAdjacentHTML('beforeend', '<style>.sg { width: 35px; height: 35px; position: fixed; bottom: 10px; right: 10px; } .sg .eye { -webkit-transform: translateX(0px);   transform: translateX(0px); } .sg:hover .eye { -webkit-transition: -webkit-transform 0.3s ease; transition: -webkit-transform 0.3s ease; transition: transform 0.3s ease; transition: transform 0.3s ease, -webkit-transform 0.3s ease; -webkit-transform: translateX(12px);   transform: translateX(12px); }</style>');
+
+    var a = document.createElement('a');
+    a.setAttribute('href', 'https://twitter.com/steeevg');
+    a.setAttribute('target', '_blank');
+    a.innerHTML = icon;
+
+    document.body.appendChild(a);
+}
+)();
+
+</script -->
+
+
+<script  >
+    
+    var SVG = Snap('#svg');
+var container = $('.container');
+var toggle = $('#toggle a');
+var stage = Snap('#stage');
+
+var colors = ['#f80c12', '#ff9933', '#d0c310', '#69d025', '#12bdb9', '#4444dd', '#442299'];
+var sizes = {};
+sizes.container = {width: 0, height: 0};
+var availableLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var letters = {};
+var sentence = [];
+var autoTypeSpeed = 250;
+var blinkLine;
+var blinkLineHeight = 70;
+var multiColors = true;
+
+toggle.bind('click', function()
+{
+	multiColors = !multiColors;
+	updateColorsToggle();
+})
+
+function updateColorsToggle()
+{
+	toggle.html('' + (multiColors ? 'Lande Space' : 'Rusted Warfare'));
+}
+
+updateColorsToggle();
+
+
+for(var i = 0; i < availableLetters.length; i++)
+{
+	var letter = availableLetters[i];
+	letters[letter] = Snap('#letter-' + letter);
+}
+
+blinkLine = SVG.path('M0,0 0,' + blinkLineHeight)
+		.attr({
+			stroke: 'white',
+			'stroke-width': 3,
+			fill: 'none',
+			class: 'blinky-mcblinkface',
+			'stroke-linecap': "round"
+		})
+
+//console.log(letters)
+
+$(window).resize(onResize);
+onResize();
+
+// newLetter(letters.a);
+// newLetter(letters.b);
+// newLetter(letters.c);
+
+var welcomeMessage = 'the pc rusted warfare';
+
+setTimeout(addWelcomeLetter, autoTypeSpeed)
+
+function addWelcomeLetter()
+{
+	if(welcomeMessage.length > 0)
+	{
+		onInput(welcomeMessage.substring(0, 1));
+		welcomeMessage = welcomeMessage.substring(1);
+		setTimeout(addWelcomeLetter, autoTypeSpeed)
+	}
+	else
+	{
+		setupInput();
+	}
+}
+
+function setupInput()
+{
+	$(window).keydown(function(e) 
+	{
+		e.preventDefault();
+		//console.log(e.key.toLowerCase())
+		onInput(e.key.toLowerCase());
+	})
+	
+	$(window).focus();
+	
+}
+
+function onInput(input)
+{
+	if(letters[input]) 
+	{
+		sentence.push(newLetter(letters[input].clone()));
+		positionSentence();
+	}
+	else if(input == ' ')
+	{
+		sentence.push(null);
+		positionSentence();
+	}
+	else if(input == 'backspace')
+	{
+		removeLast();
+	}
+}
+
+function positionSentence()
+{
+	var letterWidth = 40;
+	var letterGap = 10;
+	var leftLimit = (sizes.container.width / 100) * 80;
+	var widthLimit = (sizes.container.width / 100) * 60;
+	
+	
+	var canFitOnScreen = Math.floor(sizes.container.width / (letterWidth + letterGap));
+	if(canFitOnScreen < sentence.length)
+	{
+		var removed = sentence.splice(0, sentence.length - canFitOnScreen);
+		for(var i = 0; i < removed.length; i++)
+		{
+			if(removed[i]) removed[i].remove();
+		}
+	}
+	
+	var sentenceWidth = ((letterWidth + letterGap) * sentence.length) - letterGap;
+	
+	if(sentenceWidth > widthLimit)
+	{
+		var startLeft = leftLimit - sentenceWidth;
+	}
+	else
+	{
+		startLeft = (sizes.container.width - sentenceWidth) / 2;
+	}
+	
+	var startTop = (sizes.container.height - (letterWidth/2)) / 2;
+	
+	for(var i = 0; i < sentence.length; i++)
+	{
+		if(sentence[i]) TweenMax.to(sentence[i].node, 0.3, {transformOrign:'50% 50%', x: startLeft + ((letterGap + letterWidth) * i), y: startTop});
+	}
+	
+	if(blinkLine) TweenMax.to(blinkLine.node, 0.3, {x: startLeft + sentenceWidth, y: (sizes.container.height - (blinkLineHeight)) / 2 - 5});
+}
+
+function onResize()
+{
+	sizes.container.width = container.width();
+	sizes.container.height = container.height();
+	
+	SVG.attr({
+		width: sizes.container.width,
+		height: sizes.container.height
+	})	
+}
+
+function newLetter(letter)
+{
+	var letterHolder = stage.group();
+	
+	var paths = letter.selectAll('path');
+	var parts = [];
+	
+	// the colorfull bits
+	
+	for(var i = 0; i < paths.length; i++)
+	{
+		var path = paths[i];
+		parts = parts.concat(breakUp(path));	
+	}	
+	
+	// full bits on top
+	
+	for(var i = 0; i < paths.length; i++)
+	{
+		var path = paths[i];
+		parts = parts.concat(path);	
+	}	
+	
+	// add all the parts together
+	
+	var toAnimate = [];
+	
+	for(var i = 0; i < parts.length; i++)
+	{
+		if(typeof parts[i] == 'string')
+		{
+			var newPath = letterHolder.path(parts[i])
+			
+			newPath.attr({
+					class: 'letter',
+					'stroke-linecap': "round"
+				})
+			
+			toAnimate.push(newPath);
+			
+			newPath.node.style.fill = 'none';
+			newPath.node.style.opacity = 0.7;
+			newPath.node.style.strokeWidth = 10;// + (Math.random() * 10);
+			newPath.node.style.stroke = multiColors ? colors[Math.floor(Math.random()*colors.length)] : '#111';
+		}
+		else
+		{
+			parts[i].attr({
+					'stroke-linecap': "round"
+				})
+			parts[i].dontMove = true;
+			parts[i].node.style.strokeWidth = 5;
+			toAnimate.push(parts[i]);
+			letterHolder.append(parts[i]);
+		}	
+	}	
+	
+	// 
+	
+	for(var i = 0; i < toAnimate.length; i++)
+	{
+		var path = toAnimate[i];
+		
+		var length = path.getTotalLength();
+		var startOffset = Math.random() > 0.5 ? -length : length;
+		var strokeWidth = path.node.style.strokeWidth;
+		path.node.style.strokeDasharray = length + ' ' + length;
+		var xyOffset = 200;
+		
+		if(path.dontMove)
+		{
+			TweenMax.fromTo(path.node, 1, {strokeWidth: 0, strokeDashoffset: startOffset}, {strokeWidth: strokeWidth, strokeDashoffset: 0, delay: 0.8, ease: Power4.easeInOut})
+		}
+		else
+		{
+			TweenMax.fromTo(
+				path.node, 
+				1, 
+				{
+					strokeWidth: 1, 
+					x: '+' + ((Math.random() * xyOffset) - (xyOffset / 2)), 
+					y: '+' + ((Math.random() * xyOffset )- (xyOffset / 2)), 
+					scale: 1, 
+					strokeDashoffset: startOffset
+				}, 
+				{
+					bezier: [
+						{
+							x: (Math.random() * xyOffset) - (xyOffset / 2),
+							y: (Math.random() * xyOffset) - (xyOffset / 2)
+						},
+						{
+							x: (Math.random() * xyOffset) - (xyOffset / 2),
+							y: (Math.random() * xyOffset) - (xyOffset / 2)
+						},
+						{
+							x: 0,
+							y: 0
+						}
+					],
+					strokeWidth: strokeWidth, 
+					rotation: 0, 
+					scale: 1, 
+					//x: 0, 
+					//y: 0, 
+					strokeDashoffset: 0, 
+					ease: Power3.easeOut, 
+					delay: (i/ 100) + Math.random() /2
+				}
+			)
+		}
+	}
+	
+	TweenMax.set(letterHolder.node, {transformOrign:'50% 50%'})
+	
+	return letterHolder;
+}
+
+function breakUp(path)
+{
+	var lengthChunks = 3;
+	var length = path.getTotalLength();
+	var count = length / lengthChunks;
+	
+	var toReturn = [];
+	
+	// get points along the path
+	
+	var points = [];
+	for(var i = 0; i < count; i++)
+	{
+		var p = path.getPointAtLength( lengthChunks * i );
+		points.push([p.x, p.y]);
+	}
+	
+	// group points into chunks
+	
+	var chunks = [[]];
+	
+	while(points.length)
+	{
+		if(chunks[0].length > 2 && points.length > 2 && Math.random() < 0.2)
+		{
+			chunks.unshift([chunks[0][chunks[0].length - 1]]);
+		}
+		
+		chunks[0].push(points.shift());
+	}
+	
+	// make path strings from chunks
+	
+	for(var i = 0; i < chunks.length; i++)
+	{
+		var pathString = 'M'
+		for(var j = 0; j < chunks[i].length; j++)
+		{
+			pathString += chunks[i][j].join(',') + ' ';
+		}
+		toReturn.push(pathString);
+	}
+	
+	return toReturn;
+}
+
+
+function removeLast()
+{
+	if(sentence.length > 0)
+	{
+		var removed = sentence.splice(sentence.length - 1, 1);
+		for(var i = 0; i < removed.length; i++)
+		{
+			if(removed[i]) explodeLetter(removed[i])
+		}
+		positionSentence();
+	}
+}
+	
+function explodeLetter(letter)
+{
+	var bits = letter.selectAll('path').items;
+	for(var i = 0; i < bits.length; i++)
+	{
+		var func = i == 0 ? removeLetter : null;
+		var funcParams = i == 0 ? [bits[i]] : [];
+
+		TweenMax.to(bits[i].node, 0.4, {
+			x: Math.random() * (sizes.container.width / 2), 
+			y: Math.random() * (sizes.container.height / 2), 
+			scale: 0, 
+			rotation: Math.random() * 360
+		});
+	}
+	
+}
+
+function removeLetter(letter)
+{
+	if(letter) letter.remove();
+}
+</script>
+
+</body>
+</html>
