@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="zh-rCN" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="win/homefont123.css" />  
+<link rel="stylesheet" type="text/css" href="win/nocopy.css" />
+
+  
+<style>
+	
+	/* 外框 */
+figure {
+  padding: 2rem;
+  margin: 0;
+  position: relative;
+  color: #002df9;
+}
+figure:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(currentColor 0 0) 0 -6px no-repeat;
+  clip-path: polygon(0 0,calc(100% - 80px) 0,100% 80px,100% 100%,0 100%,0 0,5px  5px ,5px calc(100% - 5px),calc(100% - 5px) calc(100% - 5px),calc(100% - 5px) calc(80px + 2.07px),calc(100% - 80px - 2.07px) 5px,5px 5px);
+}
+figure img {
+  width: 320px;
+  filter: grayscale(0.2);
+  -webkit-mask: linear-gradient(-135deg,#0000 50px,#000 0);
+}
+figure figcaption {
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  inset: auto 0 0;
+  translate: 0 calc(50% - 5px);
+  font-family: sans-serif;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+figure figcaption:before,
+figure figcaption:after {
+  content:"";
+  height: 5px;
+  background: currentColor;
+  width: 2rem;
+  align-self: center;
+}
+figure figcaption:after {
+  flex: 1; 
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 50px;
+  background: repeating-linear-gradient(135deg,#ff4cd0 0 20px,#ff9040 0 40px);
+}
+</style>
+
+
+  
+</head>
+
+<body leftmargin=0 topmargin=0 oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+  <figure>
+	<a href="win/studio.html">
+    <img src="https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E7%A8%8B%E5%BA%8F%E5%B8%83%E5%B1%80/studio.jpg" alt="studio">
+    <figcaption style="font-family:Kufang;">专业工程程序</figcaption>
+	</a>
+</figure>
+
+
+<figure >
+	<a href="win/ostool.html">
+    <img src="https://vip.123pan.cn/1662268/LandeSR/%E5%B8%83%E5%B1%80/%E7%A8%8B%E5%BA%8F%E5%B8%83%E5%B1%80/os.png" alt="weihu">
+    <figcaption style="font-family:Kufang;">系统维护工具</figcaption>
+	</a>
+</figure>
+
+</body>
+
+</html>
