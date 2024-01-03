@@ -13,7 +13,7 @@ body {
 }
 .card .card_description {
   border-radius: 5px;
-  height: 150px;
+  height: 60px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -23,10 +23,10 @@ body {
 .card .card_description .date,
 .card .card_description .title {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 50px;
+  font-size: 30px;
 }
 .card .card_description .date {
-  margin: 0 80px 0 20px;
+  margin: 0 10px 0 20px;
 }
 .card.today .card_description {
   background-color: #ffb300;
@@ -80,7 +80,7 @@ body {
 }
 .alarm_item .time {
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #fff;
   background-color: #03a9f4;
   font-family:Omegle;
