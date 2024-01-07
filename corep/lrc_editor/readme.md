@@ -1,5 +1,5 @@
 一个简单的在线制作 lrc 文件的小工具
-
+源项目地址: https://github.com/yiyizym/lrc_editor
 **支持功能**
 
 - 操作提示
