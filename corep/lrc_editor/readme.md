@@ -18,13 +18,3 @@
 **TODO**
 - 增加快捷键
 - 增加 FAQ
-
-**开发**
-
-- 技术栈：React + mobx + webpack + material-ui + howler
-- 开发调试：`git clone` 项目后，在项目根目录运行 `npm install` ，然后运行 `npm run dev`
-- 打包发布：`npm run build`
-
-**license**
-
-BSD
