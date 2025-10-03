@@ -1,14 +1,12 @@
 ## Info
 - **Name**： Lande Yu
-- **Brand**： Coldsea Team
+- **Brand**： Coldsea
 - **Email**： [lande@vlsea.cn](mailto:lande@vlsea.cn)
 
 ## 简介
 Hello，一个普通的Dar学牲，饿了会吃饭，下雨会往家跑...阿巴阿巴~
 
-@landeyucc
-
-这里是私有仓库，优先存放个人的核心代码，公共仓库请前往[@landeyucc](https://github.com/landeyucc)。
+这里是私有仓库，优先存放个人的私有核心代码，公共仓库请前往[@landeyucc](https://github.com/landeyucc)。
 
 ### 用爱发电
 
